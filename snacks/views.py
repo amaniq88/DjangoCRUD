@@ -8,7 +8,8 @@ from django.views.generic import ( ListView,
                                    View
                                     )
 
-from django.views import render
+from django.shortcuts import render
+
 from .models import Snack
 
 
