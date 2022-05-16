@@ -19,28 +19,28 @@ class HomeView(TemplateView):
     
 
 class SnackListView (ListView):
-    template_name = "snacks_list.html"
+    template_name = "Snacklist.html"
     model = Snack
 
 class SnackDetailView(DetailView):
-    template_name = "snack_detail.html"
+    template_name = "Snack_Detail.html"
     model = Snack
 
 
 class SnackCreateView(CreateView):
-    template_name = "snack_create.html"
+    template_name = "Snack_Create.html"
     model = Snack
     fields = ["title", "purchaser", "description"]
 
 
 
 class SnackUpdateView(UpdateView):
-    template_name = "snack_update.html"
+    template_name = "Snack_Update.html"
     model = Snack
     fields = ["title", "description"]
 
 class SnackDeleteView(DeleteView):
-    template_name = "snack_delete.html"
+    template_name = "Snack_Delete.html"
     model = Snack
     success_url ='/'
 
