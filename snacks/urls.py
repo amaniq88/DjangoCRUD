@@ -13,6 +13,6 @@ urlpatterns = [
     path('<int:pk>', SnackDetailView.as_view(), name = "Snack_Detail"),
     path('update/<int:pk>', SnackUpdateView.as_view(), name = "Snack_Update"),
     path('delete/<int:pk>', SnackDeleteView.as_view(), name = "Snack_Delete"),
-    path('list/', SnackListView.as_view(), name = "SnackList"),
+    path('SnackList/', SnackListView.as_view(), name = "SnackList"),
 
 ]
