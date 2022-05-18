@@ -19,8 +19,9 @@ class HomeView(TemplateView):
     
 
 class SnackListView (ListView):
-    template_name = "Snacklist.html"
+    template_name = "SnackList.html"
     model = Snack
+    contex_object_name = "snack_list"
 
 class SnackDetailView(DetailView):
     template_name = "Snack_Detail.html"

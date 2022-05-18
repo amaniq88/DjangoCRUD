@@ -1,14 +1,23 @@
-{% extends "_base.html" %}
+{% extends "_base.html"%}
 
-{% block title %}Snacks list{% endblock title %}
+{% block hero %}
 
-{% block content %}
+{% block title %}Snack List{% endblock title %}
 
-{% for snack in snack_list %}
-<p><a href="{% url 'Snack_Detail' pk=snack.pk %}">{{snack.title}} - {{snack.purchaser}} -  {{snack. description}}</a></p>
+
+{% for snack in object_list %}
+
+<p><a href="{% url 'Snack_Detail' pk=snack.pk %}"> {{snack.title}} - {{snack.purchaser}}</a></p>
+ <br/>
+ <form action="{% url 'Snack_Update' pk=snack.pk %}" method="POST">
+    {% csrf_token %}
+        <button type="submit">Update</button>
+</form>
+
+<form action="{% url 'Snack_Delete' pk=snack.pk %}" method="POST">
+    {% csrf_token %}
+        <button type="submit">Delete</button>
+</form>
+
 {% endfor %}
-
-{% endblock content %}
-
-purchaser  = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-description  = models.TextField()
+{% endblock %}
